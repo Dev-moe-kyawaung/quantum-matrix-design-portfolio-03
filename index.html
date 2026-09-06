@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moe Kyaw Aung · မိုးကျော်အောင် — Senior Android Developer | Portfolio, Apps & Roadmap</title>
+    <meta
+      name="description"
+      content="Moe Kyaw Aung — Senior Android Developer from Tachileik, Myanmar ↔ Bangkok, Thailand. 82+ certificates, 40+ projects, 16 signature apps, Kotlin · Jetpack Compose · Clean Architecture · AI/ML · Cybersecurity."
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://0.gravatar.com/avatar/e50de5056fb346df6f6352326b64ced361105d41552d65f7a9ffd473c48e2b0a?size=128"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      // Prevent theme flash: apply saved mode + accent before paint
+      try {
+        var t = localStorage.getItem("mka-theme");
+        if (t === "light") document.documentElement.setAttribute("data-theme", "light");
+        var a = localStorage.getItem("mka-accent");
+        if (a) document.documentElement.setAttribute("data-accent", a);
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+/* ============================================================
+   QUANTUM THEME — Fractal space + shifting matrix grids
+   ============================================================ */
+
+/* --- Background fractal noise overlay --- */
+.quantum-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cdefs%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3C/defs%3E%3Crect width='100%25' height='100%25' filter='url(%23f)' opacity='0.8'/%3E%3C/svg%3E");
+  background-size: 300px 300px;
+  animation: shiftGrid 60s linear infinite;
+}
+
+@keyframes shiftGrid {
+  from { background-position: 0 0; }
+  to { background-position: 300px 300px; }
+}
+
+/* --- Shifting matrix grid (CSS conic lines) --- */
+.matrix-grid {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.07;
+  background:
+    repeating-linear-gradient(90deg, rgba(61,220,132,0.15) 0px, rgba(61,220,132,0.15) 1px, transparent 1px, transparent 60px),
+    repeating-linear-gradient(0deg, rgba(61,220,132,0.15) 0px, rgba(61,220,132,0.15) 1px, transparent 1px, transparent 60px);
+  animation: gridShift 20s linear infinite;
+}
+
+@keyframes gridShift {
+  from { transform: translate(0,0); }
+  to { transform: translate(60px,60px); }
+}
+
+/* --- Quantum particle nodes on cards --- */
+.quantum-node {
+  position: relative;
+}
+.quantum-node .node-line {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  animation: pulseLine 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes pulseLine {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+/* --- Glowing orbit ring for AI assistant --- */
+.orbit-ring {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 1.5px solid var(--accent);
+  opacity: 0.5;
+  animation: spinRing 12s linear infinite;
+}
+
+@keyframes spinRing {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* --- Data cascade lines (vertical data streams) --- */
+.data-cascade {
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  top: 0;
+  background: linear-gradient(180deg, transparent 0%, var(--accent) 40%, transparent 100%);
+  animation: cascadeFlow 4s linear infinite;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+@keyframes cascadeFlow {
+  0% { transform: translateY(-100%); opacity: 0; }
+  20% { opacity: 0.5; }
+  80% { opacity: 0.5; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+/* --- Holographic shimmer overlay --- */
+.hologram {
+  position: relative;
+  overflow: hidden;
+}
+.hologram::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(61,220,132,0.06) 40%, rgba(34,211,238,0.06) 60%, transparent 70%);
+  animation: shimmerSlide 3.5s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes shimmerSlide {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
