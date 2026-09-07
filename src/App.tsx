@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { X, Download, Copy, Check, ArrowUp, Phone, Send } from "lucide-react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import { profile } from "./data";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -480,6 +481,7 @@ export default function App() {
 
       <Toaster />
       <CursorGlow />
+      <SpeedInsights />
 
       {/* Keyboard accessibility: ESC closes modals */}
       <A11yEsc onClose={() => { setShowResume(false); setShowCall(false); }} />
